@@ -8,14 +8,14 @@ default: &default
 development:
   <<: *default
   host: eljarpo.cbjstmvqfucd.us-east-2.rds.amazonaws.com
-  database: eljarpo
-  username: eljarpo
-  password: 123451eljarpo
+  database: btc
+  username: jarpo
+  password: 123451
 
 production:
   #url: <%= ENV['DATABASE_URL'] %>
   <<: *default
   host: eljarpo.cbjstmvqfucd.us-east-2.rds.amazonaws.com
-  database: btc
-  username: jarpo
-  password: 123451
+  database: eljarpo
+  username: eljarpo
+  password: 123451eljarpo
