@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jarpo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	
+ </head>
+
+	<body class="skin-blue sidebar-mini   pace-done pace-done" style="height: auto; min-height: 100%;">
+		<div class="pace  pace-inactive pace-inactive">
+			<div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  				<div class="pace-progress-inner"></div>
+			</div>
+			<div class="pace-activity">
+			</div>
+		</div>
+
+		<!-- Site wrapper -->
+		<div class="wrapper" style="height: auto; min-height: 100%;">
+			<%= render 'shared/header' %>
+			<%= render 'shared/sidebar' %>
+			<%= yield %>
+			<%= render 'shared/footer' %>
+			<%= render 'shared/rightbar' %>
+		</div>
+  	</body>
+</html>

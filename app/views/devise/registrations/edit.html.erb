@@ -1,0 +1,63 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="min-height: 1170px;">
+<!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= current_user.email %>
+      <small>Perfil</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Examples</a></li>
+      <li class="active">Pace page</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+<div class="row">
+  <!-- left column -->
+  <div class="col-md-3">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Editar</h3>
+      </div>
+      <!-- /.box-header -->
+            <!-- form start -->
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {:class => 'form-group has-feedback', method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+          <div class="box-body">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, :class => 'form-control', :id => 'exampleInputEmail1' %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control' %>
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
+          </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+          <%= f.submit "Update", :class => 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+    <!-- /.box -->
+  </div>
+  <!--/.col (right) -->
+</div>
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

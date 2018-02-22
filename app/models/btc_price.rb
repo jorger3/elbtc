@@ -1,0 +1,3 @@
+class BtcPrice < ApplicationRecord  
+end
+  

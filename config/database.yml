@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  host: eljarpo.cbjstmvqfucd.us-east-2.rds.amazonaws.com
+  database: eljarpo
+  username: eljarpo
+  password: 123451eljarpo
+
+production:
+  #url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  host: eljarpo.cbjstmvqfucd.us-east-2.rds.amazonaws.com
+  database: btc
+  username: jarpo
+  password: 123451
